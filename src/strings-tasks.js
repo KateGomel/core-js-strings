@@ -345,8 +345,9 @@ function countVowels(str) {
  *   isPalindrome('apple') => false
  *   isPalindrome('No lemon, no melon') => true
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  const temp = str.toLowerCase().replace(/[ .,?!]/g, '');
+  return temp === temp.split('').reverse().join('');
 }
 
 /**
@@ -401,8 +402,16 @@ function reverseWords(str) {
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
-function invertCase(/* str */) {
-  throw new Error('Not implemented');
+function invertCase(str) {
+  let res = '';
+  for (let i = 0; i < str.length; i += 1) {
+    if (str[i] === str[i].toUpperCase()) {
+      res += str[i].toLowerCase();
+    } else {
+      res += str[i].toUpperCase();
+    }
+  }
+  return res;
 }
 
 /**
